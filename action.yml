@@ -1,23 +1,29 @@
-name: The name of your action here
-description: Provide a description here
-author: Your name or organization here
+name: Telegram Files Action
+description: Upload files to Telegram using a bot token
+author: nyaruta
 
 # Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
-  icon: heart
-  color: red
+  icon: 'upload-cloud'
+  color: 'green'
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: Your input description here
+  token:
+    description: 'Your Telegram bot token'
     required: true
-    default: '1000'
 
-# Define your outputs here.
-outputs:
-  time:
-    description: Your output description here
+  chat-id:
+    description: 'Your Telegram chat ID'
+    required: true
+
+  body:
+    description: 'The message body'
+    required: true
+
+  files:
+    description: 'The list of file paths to upload, one file per line.'
+    required: true
 
 runs:
   using: node20
